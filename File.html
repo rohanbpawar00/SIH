@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7fe;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .form-card {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            width: 100%;
+            max-width: 420px;
+        }
+
+        .form-card h2 {
+            margin-bottom: 20px;
+            color: #1b2559;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2b3674;
+            font-size: 0.95rem;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="number"],
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #dcdfe6;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="number"]:focus,
+        .form-group select:focus {
+            border-color: #4318ff;
+            box-shadow: 0 0 0 3px rgba(67, 24, 255, 0.15);
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 6px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.95rem;
+            color: #2b3674;
+            cursor: pointer;
+        }
+
+        .radio-option input[type="radio"] {
+            accent-color: #4318ff;
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background-color: #4318ff;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #3311cc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-card">
+        <h2>Basic Information</h2>
+        <form action="#" method="POST">
+            <!-- Full Name -->
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input 
+                    type="text" 
+                    id="fullName" 
+                    name="fullName" 
+                    placeholder="Enter your name" 
+                    required 
+                />
+            </div>
+
+            <!-- Age -->
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input 
+                    type="number" 
+                    id="age" 
+                    name="age" 
+                    placeholder="Enter your age" 
+                    min="1" 
+                    max="120" 
+                    required 
+                />
+            </div>
+
+            <!-- Gender Selection -->
+            <div class="form-group">
+                <label>Gender</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="gender" value="male" required />
+                        Male
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="gender" value="female" />
+                        Female
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="gender" value="other" />
+                        Other
+                    </label>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn-submit">Submit Details</button>
+        </form>
+    </div>
+
+</body>
+</html>
